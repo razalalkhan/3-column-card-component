@@ -1,0 +1,227 @@
+
+/* importing google fonts with the link from google fonts website */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ========================================================================================================================== */
+
+/* Defining root elements and its values to be used further in the style sheet */
+
+:root{
+
+    --clr-primary-orange: hsl(31, 77%, 52%);
+    --clr-primary-cyan-1: hsl(184, 100%, 22%);
+    --clr-primary-cyan-2: hsl(179, 100%, 13%);
+
+    /* for paragraphs only */
+    --clr-neutral-t-white:hsla(0, 0%, 100%, 0.75);
+    --clr-neutral-t-white-1:hsla(0, 0%, 100%, 0.5);
+
+    /* Very light gray (background, headings, buttons) */
+    --clr-neutral-l-grey: hsl(0, 0%, 95%);     
+
+
+    --fs-main:0.938rem;
+    --fs-p:0.7rem;
+    --fw-400:400;
+    --fw-700:700;
+    font-family: 'Lexend Deca', sans-serif;
+    font-family:'Big Shoulders Display';
+
+}
+
+/* ========================================================================================================================== */
+
+/* setting margins and padding to zero initially */
+* {
+
+    margin:0;
+    padding:0;
+}
+
+/* ========================================================================================================================== */
+
+
+/* display as a grid in the body section and defining height and centering elements in the middle of the screen */
+
+
+body{
+
+    display: grid;
+    place-items:center;
+    min-height:100vh;
+    background-color:var(--clr-neutral-l-grey);
+    margin:1rem 1rem;
+    
+}
+
+/* ========================================================================================================================== */
+
+/* setting as grid the main container and setting width and columns, border radius etc. */
+
+.container{
+
+    max-width:45rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* media query for mobile size display and converting columns in to rows using grid */
+
+@media (max-width:43.75rem){
+
+    .container{
+
+        
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "sedan sedan sedan"
+        "suv suv suv"
+        "luxury luxury luxury" ;
+    }
+
+    .sedan{
+        grid-area: sedan;
+    }
+
+    .suv{
+        grid-area:suv;
+    }
+
+    .luxury{
+        grid-area: luxury;
+    }
+
+}
+
+/* ========================================================================================================================== */
+
+
+/* formatting heading tags */
+
+h1{
+
+    font-family:'Big Shoulders Display';
+    font-weight: var(--fw-700);
+    color: var(--clr-neutral-l-grey);
+    text-transform: uppercase;
+}
+/* ========================================================================================================================== */
+
+/* formatting paragraphs tags */
+
+p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size:var(--fs-p);
+    font-weight: var(--fw-400);
+    color:var(--clr-neutral-t-white-1);
+    line-height: 1.5;
+}
+
+/* ========================================================================================================================== */
+
+/* fromatting and creating buttons for all three divs */
+
+.container button{
+    border-radius: 1.75rem;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: var(--fs-main);
+    font-weight:var(--fw-400);
+    background: var(--clr-neutral-l-grey);
+    padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+    border:0.125rem solid var(--clr-neutral-l-grey);
+    text-decoration: none;
+    margin-top:2rem;
+
+}
+
+/* ========================================================================================================================== */
+
+/* displaying grid and setting gaps and padding to sedan grid */
+
+.sedan{
+    display: grid;
+    gap:2rem;
+    padding:3rem;
+    background-color: var(--clr-primary-orange);
+    overflow: hidden;
+}
+
+/* ========================================================================================================================== */
+
+/* displaying grid and setting gaps and padding to SUV grid */
+
+
+.suv{
+    display: grid;
+    gap:2rem;
+    padding:3rem 2.3rem 3rem 3rem;
+    background-color: var(--clr-primary-cyan-1);
+    overflow: hidden;
+}
+
+/* ========================================================================================================================== */
+
+
+/* displaying grid and settings gaps and padding to Luxury grid */
+
+
+.luxury{
+    display: grid;
+    gap:2rem;
+    padding:3rem 2.2rem 3rem 3rem;
+    background-color: var(--clr-primary-cyan-2);
+    overflow: hidden;
+}
+
+/* ========================================================================================================================== */
+
+/* giving individual colors to button by using btn class */
+
+.btn-sedan{
+
+    color: var(--clr-primary-orange);
+}
+
+/* setting hover property for button shown in sedan grid */
+
+.btn-sedan:hover{
+    cursor: pointer;
+    background-color: var(--clr-primary-orange);
+    color:var(--clr-neutral-t-white);
+}
+
+/* giving individual colors to button by using btn class */
+
+.btn-suv{
+
+    color: var(--clr-primary-cyan-1);
+}
+
+/* setting hover property for button shown in SUV grid */
+.btn-suv:hover{
+    cursor: pointer;
+    background-color:var(--clr-primary-cyan-1);
+    color:var(--clr-neutral-t-white);
+}
+
+/* giving individual colors to button by using btn class */
+
+.btn-lux{
+
+    color: var(--clr-primary-cyan-2);
+}
+
+/* setting hover property for button shown in Luxury grid */
+
+.btn-lux:hover{
+    cursor: pointer;
+    background-color: var(--clr-primary-cyan-2);
+    color:var(--clr-neutral-t-white);
+}
+
+/* =================================================THE END=================================================================== */
